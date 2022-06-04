@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+  }
+  
+body {
+    margin: 0;
+    font-family: Helvetica;
+    height: 100vh;
+  background-color: darkolivegreen;
+}
+
+.parent {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .page { grid-area: 1 / 1 / 9 / 10; 
+        background-color: rgb(248, 243, 243);
+        color: black;
+
+    }
+    .p1-camp { 
+        grid-area: 3 / 2 / 7 / 3; 
+        background-color: rgb(2, 133, 41);
+        color: white;
+
+    }
+    .p1-card { 
+        grid-area: 4 / 4 / 6 / 5; 
+        color: white;
+        background-color: rgba(2, 2, 116, 0.502);
+
+    }
+    .p1-score { 
+        grid-area: 7 / 2 / 8 / 3;
+        color: white;
+        background-color: rgba(2, 116, 29, 0.485);
+
+    }
+    .p2-camp { 
+        grid-area: 3 / 8 / 7 / 9; 
+        color: white;
+
+        background-color: rgb(2, 133, 41);
+    }
+    .p2-card { 
+        grid-area: 4 / 6 / 6 / 7; 
+        color: white;
+        background-color: rgba(2, 2, 116, 0.502);
+    
+    }
+    .p2-score { 
+        grid-area: 7 / 8 / 8 / 9; 
+        color: white;
+        background-color: rgba(2, 116, 29, 0.485);
+    }
+    .banner { 
+        grid-area: 2 / 4 / 3 / 7; 
+        color: white;
+        background-color: rgba(116, 2, 2, 0.706);
+    }
