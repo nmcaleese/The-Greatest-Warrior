@@ -20,7 +20,7 @@ const CARDS = {
 
 
 /*----- app's state (variables) -----*/
-let player1, player2, P1CurrentCard, p2CurrentCard, p1CurrentScore, p2CurrentScore, cardsOnField, roundWinner, overallWinner;
+let player1, player2, p1CurrentCard, p2CurrentCard, p1CurrentScore, p2CurrentScore, cardsOnField, roundWinner, overallWinner;
 
 
 
@@ -64,11 +64,37 @@ function getP2Random() {
         return y};
 
 
+
+
+
+
+
+
+
+
 function playHand() {
     // using "x" as the index number, REMOVE a card object from p1CurrentScore array, and assign it to the variable p1CurrentCard
+    p1CurrentCard = player1.p1CurrentScore.splice(x, 1);
+    console.log(p1CurrentCard);
+    cardsOnField.push(p1CurrentCard)
+    console.log(cardsOnField)
+
+
     // using "y" as the index number, REMOVE a card object from p2CurrentScore array, and assicn it to the variable p2CurrentCard
+    p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
+    console.log(p2CurrentCard);
+    cardsOnField.push(p2CurrentCard)
+    console.log(cardsOnField)
 
 }
+
+
+
+
+
+
+
+
 
 function determineWinner() {
 // add both cards to the variable cardsOnField
