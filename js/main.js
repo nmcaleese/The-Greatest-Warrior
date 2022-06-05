@@ -51,10 +51,18 @@ function initGame() {
     cardsOnField = []
 }
 
-function getRandoms(){
-//get a random number bounded by the length of player1's array and assign it "x"
-//get a random number bounded by the length of player2's array and assign it "y" 
+
+// get a random number[Math.floor(Math.random)] bounded by the length of player1's array and assign it "x"
+function getP1Random(){
+       let x = Math.floor(Math.random() * player1.p1CurrentScore.length)
+        return x;
 }
+// get a random number bounded by the length of player2's array and assign it "y" 
+
+function getP2Random() {
+        let y = Math.floor(Math.random() * player2.p2CurrentScore.length);
+        return y};
+
 
 function playHand() {
     // using "x" as the index number, REMOVE a card object from p1CurrentScore array, and assign it to the variable p1CurrentCard
