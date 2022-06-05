@@ -57,30 +57,28 @@ function playHand() {
     let x = Math.floor(Math.random() * player1.p1CurrentScore.length)
      // using "x" as the index number, REMOVE a card object from p1CurrentScore array, and assign it to the variable p1CurrentCard
     p1CurrentCard = player1.p1CurrentScore.splice(x, 1);
-    cardsOnField.push(p1CurrentCard);
+    cardsOnField.push(p1CurrentCard[0]);
     // get a random number bounded by the length of player2's array and assign it "y" 
     let y = Math.floor(Math.random() * player2.p2CurrentScore.length)
         // using "y" as the index number, REMOVE a card object from p2CurrentScore array, and assicn it to the variable p2CurrentCard
     p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
-    cardsOnField.push(p2CurrentCard);
+    cardsOnField.push(p2CurrentCard[0]);
 }
-
-
-
-
-
-
-
-
 
 
 function determineWinner() {
-// if (p1CurrentCard.CARDS.)
-// Access p1CurrentCard.score (=CARDS.card#.score) and compare it to p2CurrentCard.score
-// if p1CurrentCard.score > p2CurrentCard.score {add cardsOnField to p1Current.score}
-// else if p1CurrentCard.score < p2CurrentCard.score {add cardsOnField to p2Current.score}
-// else { run getRandoms and determineWinner again}
+// Access p1CurrentCard.score and compare it to p2CurrentCard.score
+    if (p1CurrentCard[0].score > p2CurrentCard[0].score) {
+  // if p1CurrentCard.score > p2CurrentCard.score {add cardsOnField to p1Current.score}
+        player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1])
+} else {player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1])
 }
+cardsOnField = []
+
+// IN CASE OF TIE else { run getRandoms and determineWinner again} 
+// Tie will only work if the "grabbing" of the cards out of the array is based on the number of cards, rather than just a specific item in the array
+}
+
 
 function reder() {
     //update the DOM to reflect the new Score
