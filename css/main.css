@@ -7,7 +7,6 @@ body {
     font-family: Helvetica;
     height: 100vh;
     text-align: center;
-  background-color: darkolivegreen;
 }
 
 .parent {
@@ -26,7 +25,7 @@ body {
     }
     .p1-camp { 
         grid-area: 3 / 2 / 7 / 3; 
-        background-color: rgb(2, 133, 41);
+        background-color: rgb(133, 2, 13);
         color: white;
 
     }
@@ -46,7 +45,7 @@ body {
         grid-area: 3 / 8 / 7 / 9; 
         color: white;
 
-        background-color: rgb(2, 133, 41);
+        background-color: rgb(0, 40, 186);
     }
     .p2-card { 
         grid-area: 4 / 6 / 6 / 7; 
@@ -62,5 +61,5 @@ body {
     .banner { 
         grid-area: 2 / 4 / 3 / 7; 
         color: white;
-        background-color: rgba(116, 2, 2, 0.706);
+        background-color: rgba(115, 115, 115, 0.706);
     }
