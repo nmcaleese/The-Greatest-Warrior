@@ -1,26 +1,26 @@
 /*----- constants -----*/
-const PLAYER1 = 'The Red Warriors';
-const PLAYER2 = 'The Blue Warriors';
+// const PLAYER1 = 'The Red Warriors';
+// const PLAYER2 = 'The Blue Warriors';
 
 //set constants for different cards [note: card names may be used for random index if they're replaced with the score they hold]
 const CARDS = {
-    card1: {name: 'Celt  Warrior', score: 1},
-    card2: {name: 'Gladiator', score: 2},
-    card3: {name: 'English Knight', score: 3},
-    card4: {name: 'Viking', score: 4},
-    card5: {name: 'Moari Warrior', score: 5},
-    card6: {name: 'Zande Warrior', score: 6},
-    card7: {name: 'Persian Immortal', score: 7},
-    card8: {name: 'Ninja', score: 8},
-    card9: {name: 'Apache', score: 9},
-    card10: {name: 'Shaolin Monk', score: 10},
-    card11: {name: 'Samurai', score: 11},
-    card12: {name: 'Spartan', score: 12},
+    card0: {name: 'Celt  Warrior', score: 0},
+    card1: {name: 'Gladiator', score: 1},
+    card2: {name: 'English Knight', score: 2},
+    card3: {name: 'Viking', score: 3},
+    card4: {name: 'Moari Warrior', score: 4},
+    card5: {name: 'Zande Warrior', score: 5},
+    card6: {name: 'Persian Immortal', score: 6},
+    card7: {name: 'Ninja', score: 7},
+    card8: {name: 'Apache', score: 8},
+    card9: {name: 'Shaolin Monk', score: 9},
+    card10: {name: 'Samurai', score: 10},
+    card11: {name: 'Spartan', score: 11},
 }
 
 
 /*----- app's state (variables) -----*/
-
+let player1, player2, P1CurrentCard, p2CurrentCard, p1CurrentScore, p2CurrentScore, cardsOnField, roundWinner, overallWinner;
 
 
 
@@ -36,6 +36,42 @@ const CARDS = {
 
 /*----- functions -----*/
 
+function initGame() {
+    player1 = {
+        name: 'The Red Warriors', 
+        p1CurrentScore: [CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11],
+        p1CurrentCard: [],
+    }
 
+    player2 = {
+        name: 'The Blue Warriors', 
+        p2CurrentScore: [CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11],
+        p2CurrentCard: [],
+    }
+    cardsOnField = []
+}
 
+function getRandoms(){
+//get a random number bounded by the length of player1's array and assign it "x"
+//get a random number bounded by the length of player2's array and assign it "y" 
+}
 
+function playHand() {
+    // using "x" as the index number, REMOVE a card object from p1CurrentScore array, and assign it to the variable p1CurrentCard
+    // using "y" as the index number, REMOVE a card object from p2CurrentScore array, and assicn it to the variable p2CurrentCard
+
+}
+
+function determineWinner() {
+// add both cards to the variable cardsOnField
+// Access p1CurrentCard.score (=CARDS.card#.score) and compare it to p2CurrentCard.score
+// if p1CurrentCard.score > p2CurrentCard.score {add cardsOnField to p1Current.score}
+// else if p1CurrentCard.score < p2CurrentCard.score {add cardsOnField to p2Current.score}
+// else { run getRandoms and determineWinner again}
+}
+
+function reder() {
+    //update the DOM to reflect the new Score
+}
+
+initGame()
