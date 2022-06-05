@@ -52,41 +52,19 @@ function initGame() {
 }
 
 
-// get a random number[Math.floor(Math.random)] bounded by the length of player1's array and assign it "x"
-function getP1Random(){
-       let x = Math.floor(Math.random() * player1.p1CurrentScore.length)
-        return x;
-}
-// get a random number bounded by the length of player2's array and assign it "y" 
-
-function getP2Random() {
-        let y = Math.floor(Math.random() * player2.p2CurrentScore.length);
-        return y};
-
-
-
-
-
-
-
-
-
-
 function playHand() {
-    // using "x" as the index number, REMOVE a card object from p1CurrentScore array, and assign it to the variable p1CurrentCard
+    // get a random number[Math.floor(Math.random)] bounded by the length of player1's array and assign it "x"
+    let x = Math.floor(Math.random() * player1.p1CurrentScore.length)
+     // using "x" as the index number, REMOVE a card object from p1CurrentScore array, and assign it to the variable p1CurrentCard
     p1CurrentCard = player1.p1CurrentScore.splice(x, 1);
-    console.log(p1CurrentCard);
-    cardsOnField.push(p1CurrentCard)
-    console.log(cardsOnField)
-
-
-    // using "y" as the index number, REMOVE a card object from p2CurrentScore array, and assicn it to the variable p2CurrentCard
+    cardsOnField.push(p1CurrentCard);
+    // get a random number bounded by the length of player2's array and assign it "y" 
+    let y = Math.floor(Math.random() * player2.p2CurrentScore.length)
+        // using "y" as the index number, REMOVE a card object from p2CurrentScore array, and assicn it to the variable p2CurrentCard
     p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
-    console.log(p2CurrentCard);
-    cardsOnField.push(p2CurrentCard)
-    console.log(cardsOnField)
-
+    cardsOnField.push(p2CurrentCard);
 }
+
 
 
 
@@ -97,7 +75,7 @@ function playHand() {
 
 
 function determineWinner() {
-// add both cards to the variable cardsOnField
+// if (p1CurrentCard.CARDS.)
 // Access p1CurrentCard.score (=CARDS.card#.score) and compare it to p2CurrentCard.score
 // if p1CurrentCard.score > p2CurrentCard.score {add cardsOnField to p1Current.score}
 // else if p1CurrentCard.score < p2CurrentCard.score {add cardsOnField to p2Current.score}
