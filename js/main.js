@@ -25,22 +25,20 @@ let player1, player2, p1CurrentCard, p2CurrentCard, p1CurrentScore, p2CurrentSco
 
 
 /*----- cached element references -----*/
-// establish camp element
-const p1CampEl = document.getElementByID('#player-1-camp')
-const p2CampEl = document.getElementById("#player-2-camp")
 
 //establish score element
-const p1ScoreEl = document.getElementById("#player-1-score")
-const p2ScoreEl = document.getElementById("#player-2-score")
+const p1ScoreEl = document.getElementById('player-1-score')
+const p2ScoreEl = document.getElementById('player-2-score')
 
 //establish card element
-const p1CardEl = document.getElementById("#player-1-card")
-const p2CardEl = document.getElementById("#player-2-card")
+const p1CardEl = document.getElementById('player-1-card')
+const p2CardEl = document.getElementById('player-2-card')
+
 //establish attack element
-const BannerEl = document.getElementsByClassName("banner")
+const BannerEl = document.getElementById('banner')
 
 /*----- event listeners -----*/
-
+BannerEl.addEventListener("click", playHand)
 
 
 
@@ -63,6 +61,7 @@ function initGame() {
 
 
 function playHand() {
+    //add winner funciton here that only begins the funciton if neither player score.length is at 0
     // get a random number[Math.floor(Math.random)] bounded by the length of player1's array and assign it "x"
     let x = Math.floor(Math.random() * player1.p1CurrentScore.length)
      // using "x" as the index number, REMOVE a card object from p1CurrentScore array, and assign it to the variable p1CurrentCard
@@ -84,14 +83,26 @@ function determineWinner() {
 } else {player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1])
 }
 cardsOnField = []
+// add winner function when 
 
-// IN CASE OF TIE else { run getRandoms and determineWinner again} 
-// Tie will only work if the "grabbing" of the cards out of the array is based on the number of cards, rather than just a specific item in the array
 }
 
 
-function reder() {
-    //update the DOM to reflect the new Score
+function render() {
+    p1ScoreEl.innerText = player1.p1CurrentScore.length
+    p2ScoreEl.innerText = player2.p2CurrentScore.length
+    
 }
 
 initGame()
+
+
+
+//Ice-box: 
+
+// IN CASE OF TIE else { run getRandoms and determineWinner again} 
+// Tie will only work if the "grabbing" of the cards out of the array is based on the number of cards, rather than just a specific item in the array
+
+// Establish camp element with tent animation that reflects the player's score
+// const p1CampEl = document.getElementByID('#player-1-camp')
+// const p2CampEl = document.getElementById("#player-2-camp")
