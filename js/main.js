@@ -39,12 +39,12 @@ const p1CardEl = document.getElementById("player-1-card");
 const p2CardEl = document.getElementById("player-2-card");
 
 //establish Determine winner element
-const BannerEl = document.getElementById("banner");
+const bannerEl = document.getElementById("banner");
 
 /*----- event listeners -----*/
 p1CampEl.addEventListener("click", playHand);
 
-BannerEl.addEventListener("click", determineWinner);
+bannerEl.addEventListener("click", determineWinner);
 
 /*----- functions -----*/
 
@@ -52,8 +52,7 @@ function initGame() {
   player1 = {
     name: "The Red Warriors",
     p1CurrentScore: [
-      CARDS.card0,
-      CARDS.card1 /*CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11*/,
+      CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11,
     ],
     p1CurrentCard: [],
   };
@@ -61,8 +60,7 @@ function initGame() {
   player2 = {
     name: "The Blue Warriors",
     p2CurrentScore: [
-      CARDS.card0,
-      CARDS.card1 /*CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11*/,
+      CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11,
     ],
     p2CurrentCard: [],
   };
@@ -70,22 +68,25 @@ function initGame() {
 }
 
 function playHand() {
-  //winner function
   if (player1.p1CurrentScore.length === 0) {
-    BannerEl.innerText = "All of your Warriors have been slaughtered";
+    bannerEl.innerText = "All of your Warriors have been slaughtered";
   } else if (player2.p2CurrentScore.length === 0) {
-    BannerEl.innerText = "You have slaughtered the enemies forces!";
+    bannerEl.innerText = "You have slaughtered the enemies forces!";
   } else {
     // get a random number[Math.floor(Math.random)] bounded by the length of player1's array and assign it "x"
     let x = Math.floor(Math.random() * player1.p1CurrentScore.length);
     // using "x" as the index number, REMOVE a card object from p1CurrentScore array, and assign it to the variable p1CurrentCard
     p1CurrentCard = player1.p1CurrentScore.splice(x, 1);
     cardsOnField.push(p1CurrentCard[0]);
+    p1CardEl.innerText = p1CurrentCard[0].name
     // get a random number bounded by the length of player2's array and assign it "y"
     let y = Math.floor(Math.random() * player2.p2CurrentScore.length);
     // using "y" as the index number, REMOVE a card object from p2CurrentScore array, and assicn it to the variable p2CurrentCard
     p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
     cardsOnField.push(p2CurrentCard[0]);
+    p2CardEl.innerText = p2CurrentCard[0].name
+    bannerEl.innerText = `Fight!`
+    console.log(cardsOnField)
   }
 }
 
@@ -93,22 +94,31 @@ function determineWinner() {
   // Access p1CurrentCard.score and compare it to p2CurrentCard.score
   if (p1CurrentCard[0].score > p2CurrentCard[0].score) {
     // if p1CurrentCard.score > p2CurrentCard.score {add cardsOnField to p1Current.score}
+    bannerEl.innerText = `Your warrior won`;   
     player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1]);
-  } else {
+  } else if (p2CurrentCard[0].score > p1CurrentCard[0].score){
+    bannerEl.innerText = `Your warrior was defeated`
     player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1]);
-  }
+  } else {
+    console.log(cardsOnField)
+    // console.log(player1.p1CurrentScore)
+    // console.log(player2.p2CurrentScore)  
+    bannerEl.innerText = `Your warriors killed each other`
+    }
   cardsOnField = [];
   render()
 }
 
 function render() {
-  p1ScoreEl.innerText = `You have ${player1.p1CurrentScore.length} warriors remaining`;
-  p2ScoreEl.innerText = `You have ${player2.p2CurrentScore.length} warriors remaining`;
+  p1ScoreEl.innerText = `You have ${player1.p1CurrentScore.length} warriors left in your camp`;
+  p2ScoreEl.innerText = `You have ${player2.p2CurrentScore.length} warriors left in your camp`;
 }
 
 initGame();
 
 //Ice-box:
+
+//turn off "camp" button once a warrior is on the field
 
 // IN CASE OF TIE else { run getRandoms and determineWinner again}
 // Tie will only work if the "grabbing" of the cards out of the array is based on the number of cards, rather than just a specific item in the array
