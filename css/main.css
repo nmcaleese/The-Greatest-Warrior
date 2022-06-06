@@ -27,11 +27,32 @@ body {
   grid-area: 3 / 2 / 7 / 3;
   background-color: rgb(133, 2, 13);
   color: white;
+  cursor: pointer;
 }
 .p1-card {
   grid-area: 4 / 4 / 6 / 5;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 5px 5px 5px 5px;
+  /* Set the card's dimensions, and size it relative to
+     it's font size. */
+  font-size: inherit;
+  width: 10em;
+  height: 15em;
+  /* Add a default background color and border. */
+  background-color: #fff;
+  border-radius: 0.8em;
+  border: 1px solid #c3c3c3;
+  /* Scale and set the background settings. */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* "Hide" any text within the element (use text to be
+     simply compliant with screen readers, etc.). */
   color: white;
-  background-color: rgba(2, 2, 116, 0.502);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .p1-score {
   grid-area: 7 / 2 / 8 / 3;
@@ -46,8 +67,26 @@ body {
 }
 .p2-card {
   grid-area: 4 / 6 / 6 / 7;
+  margin: 5px 5px 5px 5px;
+  /* Set the card's dimensions, and size it relative to
+     it's font size. */
+  font-size: inherit;
+  width: 10em;
+  height: 15em;
+  /* Add a default background color and border. */
+  background-color: #fff;
+  border-radius: 0.8em;
+  border: 1px solid #c3c3c3;
+  /* Scale and set the background settings. */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* "Hide" any text within the element (use text to be
+     simply compliant with screen readers, etc.). */
   color: white;
-  background-color: rgba(2, 2, 116, 0.502);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .p2-score {
   grid-area: 7 / 8 / 8 / 9;
@@ -58,4 +97,7 @@ body {
   grid-area: 2 / 4 / 3 / 7;
   color: white;
   background-color: rgba(115, 115, 115, 0.706);
+  cursor: pointer;
 }
+
+
