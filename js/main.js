@@ -1,7 +1,4 @@
 /*----- constants -----*/
-// const PLAYER1 = 'The Red Warriors';
-// const PLAYER2 = 'The Blue Warriors';
-
 //set constants for different cards [note: card names may be used for random index if they're replaced with the score they hold]
 const CARDS = {
     card0: {name: 'Celt  Warrior', score: 0},
@@ -47,13 +44,13 @@ BannerEl.addEventListener("click", playHand)
 function initGame() {
     player1 = {
         name: 'The Red Warriors', 
-        p1CurrentScore: [CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11],
+        p1CurrentScore: [CARDS.card0, CARDS.card1, /*CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11*/],
         p1CurrentCard: [],
     }
 
     player2 = {
         name: 'The Blue Warriors', 
-        p2CurrentScore: [CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11],
+        p2CurrentScore: [CARDS.card0, CARDS.card1, /*CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11*/],
         p2CurrentCard: [],
     }
     cardsOnField = []
@@ -61,17 +58,26 @@ function initGame() {
 
 
 function playHand() {
-    //add winner funciton here that only begins the funciton if neither player score.length is at 0
-    // get a random number[Math.floor(Math.random)] bounded by the length of player1's array and assign it "x"
+    //winner function
+    if (player1.p1CurrentScore.length === 0) {
+        BannerEl.innerText = 'All of your Warriors have been slaughtered'
+    } else if (player2.p2CurrentScore.length === 0) {
+        BannerEl.innerText = 'You have slaughtered the enemies forces!'
+
+    } else { 
+        // get a random number[Math.floor(Math.random)] bounded by the length of player1's array and assign it "x"
     let x = Math.floor(Math.random() * player1.p1CurrentScore.length)
-     // using "x" as the index number, REMOVE a card object from p1CurrentScore array, and assign it to the variable p1CurrentCard
-    p1CurrentCard = player1.p1CurrentScore.splice(x, 1);
-    cardsOnField.push(p1CurrentCard[0]);
-    // get a random number bounded by the length of player2's array and assign it "y" 
-    let y = Math.floor(Math.random() * player2.p2CurrentScore.length)
-        // using "y" as the index number, REMOVE a card object from p2CurrentScore array, and assicn it to the variable p2CurrentCard
-    p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
-    cardsOnField.push(p2CurrentCard[0]);
+    // using "x" as the index number, REMOVE a card object from p1CurrentScore array, and assign it to the variable p1CurrentCard
+   p1CurrentCard = player1.p1CurrentScore.splice(x, 1);
+   cardsOnField.push(p1CurrentCard[0]);
+   // get a random number bounded by the length of player2's array and assign it "y" 
+   let y = Math.floor(Math.random() * player2.p2CurrentScore.length)
+       // using "y" as the index number, REMOVE a card object from p2CurrentScore array, and assicn it to the variable p2CurrentCard
+   p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
+   cardsOnField.push(p2CurrentCard[0]);
+
+    }
+    
 }
 
 
