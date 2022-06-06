@@ -20,14 +20,24 @@ const CARDS = {
 
 
 /*----- app's state (variables) -----*/
-let player1, player2, p1CurrentCard, p2CurrentCard, p1CurrentScore, p2CurrentScore, cardsOnField, roundWinner, overallWinner;
+let player1, player2, p1CurrentCard, p2CurrentCard, p1CurrentScore, p2CurrentScore, cardsOnField, overallWinner;
 
 
 
 /*----- cached element references -----*/
+// establish camp element
+const p1CampEl = document.getElementByID('#player-1-camp')
+const p2CampEl = document.getElementById("#player-2-camp")
 
+//establish score element
+const p1ScoreEl = document.getElementById("#player-1-score")
+const p2ScoreEl = document.getElementById("#player-2-score")
 
-
+//establish card element
+const p1CardEl = document.getElementById("#player-1-card")
+const p2CardEl = document.getElementById("#player-2-card")
+//establish attack element
+const BannerEl = document.getElementsByClassName("banner")
 
 /*----- event listeners -----*/
 
