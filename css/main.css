@@ -4,61 +4,50 @@
 
 body {
   margin: 0;
-  font-family: Helvetica;
+  font-family: 'MedievalSharp', cursive;
   height: 100vh;
   text-align: center;
   display: grid;
   height: 100vh;
-  grid-template-columns: 40px 250px 1fr 165px 77px 165px 1fr 250px 20px;
-  grid-template-rows: 50px 50px 50px 250px 1fr 50px;
+  grid-template-columns: 40px 250px 1fr 165px 75px 165px 1fr 250px 20px;
+  grid-template-rows: 50px 50px 1fr 250px 1fr 50px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   background-color: rgb(248, 243, 243);
   color: black;
 }
 
-/* .parent {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-} */
-
-/* .page {
-  grid-area: 1 / 1 / 9 / 10;
-  background-color: rgb(248, 243, 243);
-  color: black;
-} */
 .p1-camp {
   grid-area: 3 / 2 / 6 / 3;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 50px 40px;
+  grid-template-columns: 2fr 125px;
+  grid-template-rows: 1fr 85px 40px 20px;
   background-color: rgba(0, 0, 0, 0.383);
   color: white;
   box-shadow: 0 20px 50px 0 rgb(0 0 0 / 80%), 0 6px 20px 0 rgb(0 0 0 / 20%);
   border-radius: 5px;
 }
 .p1-score {
-  grid-area: 2 / 1 / 2 / 2;
+  grid-area: 2 / 2 / 4 / 3;
   color: rgb(239, 238, 238);
-  background-color: rgb(133, 2, 13);
-  border-radius: 8px 0px 0px 8px;
-  box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
+  background-color: rgba(153 24 35);
+  /* background-color: rgb(79 11 17 / 70%); */
+  border-radius: 8px 8px 8px 8px;
+  /* box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%); */
 }
 #send-warrior {
-  grid-area: 3/ 2 / 2 / 2;
-  background-color: rgb(79 11 17 / 70%);
+  grid-area: 3/ 2 / 3 / 3;
+  /* background-color: rgb(153 24 35); */
+  background-color: rgba(79, 11, 17, 0);
   color: white;
-  border-radius: 0px 8px 8px 0px;
+  border-radius: 8px 8px 8px 8px;
   border: black;
   box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
   cursor: pointer;
 }
 #send-warrior:hover {
-  background-color: rgb(133, 2, 13);
+  background-color: rgba(79, 11, 17, 0);
+  /* background-color: rgb(153 24 35); */
   box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%);
 }
 .p1-card {
@@ -88,9 +77,13 @@ body {
 
 .p2-camp {
   grid-area: 3 / 8 / 6 / 9;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 50px 40px;
+  background-color: rgba(0, 0, 0, 0.383);
   color: white;
-
-  background-color: rgb(0, 40, 186);
+  box-shadow: 0 20px 50px 0 rgb(0 0 0 / 80%), 0 6px 20px 0 rgb(0 0 0 / 20%);
+  border-radius: 5px;
 }
 .p2-card {
   grid-area: 4 / 6 / 5 / 7;
@@ -116,9 +109,11 @@ body {
   overflow: hidden;
 }
 .p2-score {
-  grid-area: 7 / 8 / 8 / 9;
-  color: white;
-  background-color: rgba(2, 116, 29, 0.485);
+  grid-area: 2 / 1 / 2 / 2;
+  color: rgb(239, 238, 238);
+  background-color: rgb(133, 2, 13);
+  border-radius: 8px 0px 0px 8px;
+  box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
 }
 .banner {
   grid-area: 2/ 4 / 3 / 7;
