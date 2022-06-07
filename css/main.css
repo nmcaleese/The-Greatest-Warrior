@@ -30,12 +30,35 @@ body {
   box-shadow: 0 20px 50px 0 rgb(0 0 0 / 80%), 0 6px 20px 0 rgb(0 0 0 / 20%);
   border-radius: 5px;
 }
+#Player-1-hand {
+  background: rgba(0, 0, 0, 0);
+  grid-area: 1 / 1 / 4 / 3;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: repeat(12, 1fr);
+}
+.deck {
+  background-color: rgb(0 0 0 / 80%);
+  display: inline-block;
+  grid-area: 6/1;
+  height: 120px;
+  width: 80px;
+  margin: 3px;
+  border-radius: 0.7em;
+  background-image: url(https://i.imgur.com/TkbFSAw.jpg?1);
+  border: 1px solid rgb(153 24 35);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
 .p1-score {
   grid-area: 2 / 2 / 4 / 3;
   color: rgb(239, 238, 238);
   background-color: rgba(153 24 35);
-  /* background-color: rgb(79 11 17 / 70%); */
   border-radius: 8px 8px 8px 8px;
+  height: 125px;
+  width: 125px;
+  font-size: 50px;
 }
 #send-warrior {
   grid-area: 3/ 2 / 3 / 3;
@@ -43,13 +66,18 @@ body {
   color: white;
   font-family: 'MedievalSharp', cursive;
   border-radius: 8px 8px 8px 8px;
+  height: 40px;
+  width: 125px;
   border: black;
-  box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
+  /* box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%); */
+  box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%);
   cursor: pointer;
 }
 #send-warrior:hover {
   background-color: rgba(79, 11, 17, 0);
-  box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%);
+  box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
+  /* box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%); */
+  transition: 0.15s;
 }
 .p1-card {
   grid-area: 4 / 4 / 5 / 5;
@@ -62,6 +90,7 @@ body {
   font-size: inherit;
   /* Add a default background color and border. */
   background-color: rgb(0, 0, 0);
+  background-image: url(https://i.imgur.com/TkbFSAw.jpg?1);
   border-radius: 0.8em;
   border: 1px solid rgba(153 24 35);
   /* Scale and set the background settings. */
@@ -96,6 +125,7 @@ body {
   height: 15em;
   /* Add a default background color and border. */
   background-color: rgb(0, 0, 0);
+  background-image: url(https://i.imgur.com/TkbFSAw.jpg?2);
   border-radius: 0.8em;
   border: 1px solid rgba(153 24 35);
   /* Scale and set the background settings. */
@@ -114,12 +144,16 @@ body {
   color: rgb(239, 238, 238);
   background-color: rgba(153 24 35);
   border-radius: 8px 8px 8px 8px;
+  font-size: 50px;
 }
 .banner {
   grid-area: 2/ 4 / 3 / 7;
-  color: white;
-  background-color: rgba(115, 115, 115, 0.706);
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: black;
+  font-size: 50px;
+  box-shadow: 0 20px 50px 0 rgb(0 0 0 / 80%), 0 6px 20px 0 rgb(0 0 0 / 20%);
+  border-radius: 5px;
 }
 
 

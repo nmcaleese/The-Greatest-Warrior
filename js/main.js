@@ -122,8 +122,8 @@ function determineWinner() {
 }
 
 function render() {
-  p1ScoreEl.innerText = `You have ${player1.p1CurrentScore.length} warriors left in your camp`;
-  p2ScoreEl.innerText = `You have ${player2.p2CurrentScore.length} warriors left in your camp`;
+  p1ScoreEl.innerText = player1.p1CurrentScore.length;
+  p2ScoreEl.innerText = player2.p2CurrentScore.length;
 
   bannerEl.innerText = `prepare to fight`;
 }
