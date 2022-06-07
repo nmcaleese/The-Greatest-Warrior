@@ -1,6 +1,6 @@
 /*----- constants -----*/
 const CARDS = {
-  card0: { name: "Celt  Warrior", score: 0, image: "url('https://i.imgur.com/hSPyWt0.jpg?1')" },
+  card0: { name: "Celt  Warrior", score: 0, image: "url('https://i.imgur.com/hSPyWt0.jpg?2')" },
   card1: { name: "Gladiator", score: 1, image: "url('https://i.imgur.com/5HeHBme.png?1')" },
   card2: { name: "Knight", score: 2, image: "url('https://i.imgur.com/eY0Z0GU.jpg')"},
   card3: { name: "Viking", score: 3, image: "url('https://i.imgur.com/edSSlUo.jpg')" },
@@ -83,22 +83,26 @@ function initGame() {
   cardsOnField = [];
 }
 
+function randomCard() {
+  let x = Math.floor(Math.random() * player1.p1CurrentScore.length);
+  p1CurrentCard = player1.p1CurrentScore.splice(x, 1);
+  let y = Math.floor(Math.random() * player2.p2CurrentScore.length);
+    p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
+}
+
 function playHand() {
+  randomCard()
   if (player1.p1CurrentScore.length === 0) {
     bannerEl.innerText = "All of your Warriors have been slaughtered";
   } else if (player2.p2CurrentScore.length === 0) {
     bannerEl.innerText = "You have slaughtered the enemies forces!";
   } else {
-    let x = Math.floor(Math.random() * player1.p1CurrentScore.length);
-    p1CurrentCard = player1.p1CurrentScore.splice(x, 1);
     cardsOnField.push(p1CurrentCard[0]);
-    p1CardEl.innerText = p1CurrentCard[0].name;
-    let y = Math.floor(Math.random() * player2.p2CurrentScore.length);
-    p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
     cardsOnField.push(p2CurrentCard[0]);
+    p1CardEl.innerText = p1CurrentCard[0].name;
     p2CardEl.innerText = p2CurrentCard[0].name;
+    
     bannerEl.innerText = `Fight!`;
-    console.log(cardsOnField);
     changeCards()
   }
 }
