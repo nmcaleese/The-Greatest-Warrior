@@ -75,12 +75,16 @@ let player1,
 
 const p1PlayButtonEl = document.getElementById("send-warrior");
 
-const anyCardEl = document.getElementById("Player-1-hand")
+const playerHandEl = document.querySelectorAll('#player-1-hand > .card');
+
+const anyCardEl = document.getElementById("player-1-hand")
 
 const p1ScoreEl = document.getElementById("p1-score");
+
 const p2ScoreEl = document.getElementById("player-2-score");
 
 const p1CardEl = document.getElementById("player-1-card");
+
 const p2CardEl = document.getElementById("player-2-card");
 
 const bannerEl = document.getElementById("banner");
@@ -98,19 +102,14 @@ resetButtonEl.addEventListener("click", initGame)
 
 /*----- functions -----*/
 
-function test(){
-  console.log('it works')
-}
 
 function initGame() {
   player1 = {
-    name: "The Red Warriors",
     p1CurrentScore: [CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11,
     ],
     p1CurrentCard: [],
   };
   player2 = {
-    name: "The Blue Warriors",
     p2CurrentScore: [ CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11,
     ],
     p2CurrentCard: [],
@@ -148,6 +147,10 @@ function flipCard() {
     bannerEl.innerText = `Fight!`;
   }
 }
+// notes: parsing out the funcitons into smaller chunks to get the terrain
+function flipCard() {
+
+}
 
 function playHand() {
   revealCard();
@@ -182,7 +185,29 @@ function revealCard() {
   p2CardEl.style.backgroundImage = cardsOnField[1].image;
 }
 
+
+
+function amountOfCards () {
+  //based on player1.p1CurrentScore.length (this will give you the number of cards that should be iterated in the players hand)
+//  player1.p1CurrentScore.forEach(
+  playerHandEl.forEach(function(card, idx){
+    if(idx < player1.p1CurrentScore.length){
+        card.style.background = 
+        innerText = 'done'
+    }
+    })
+
+  // the default state of the cards should be transparent, and the iterator brings them out
+
+  // update the background of each iterated card to the card default background
+
+}
+
+
 initGame();
+
+
+
 
 
 
@@ -191,3 +216,6 @@ initGame();
 // IN CASE OF TIE else { run getRandoms and playHand again}
 // Tie will only work if the "grabbing" of the cards out of the array is based on the number of cards, rather than just a specific item in the array
 
+
+
+//betting phase true or false, 
