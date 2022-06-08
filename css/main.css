@@ -49,6 +49,12 @@ body {
   background-position: center center;
   background-size: cover;
 }
+.card:hover {
+  margin: 0;
+  box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
+  /* box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%); */
+  transition: 0.15s;
+}
 
 #one {
   grid-area: 4/4;
@@ -92,14 +98,18 @@ body {
 #p1-captured-six {
   grid-area: 5/2;
 }
-.p1-score {
+#player-1-score {
   grid-area: 2 / 2 / 4 / 3;
   color: rgb(239, 238, 238);
   background-color: rgba(153 24 35);
   border-radius: 8px 8px 8px 8px;
   height: 125px;
   width: 125px;
-  font-size: 50px;
+  font-size: 15px;
+  padding: 5px;
+}
+#p1-score {
+  font-size: 70px;
 }
 #send-warrior {
   grid-area: 3/ 2 / 3 / 3;
@@ -130,8 +140,8 @@ body {
      it's font size. */
   font-size: inherit;
   /* Add a default background color and border. */
-  background-color: rgb(0, 0, 0);
-  background-image: url(https://i.imgur.com/TkbFSAw.jpg?1);
+  background-color: rgba(0, 0, 0, 0);
+  /* background-image: url(https://i.imgur.com/TkbFSAw.jpg?1); */
   border-radius: 0.8em;
   border: 1px solid rgba(153 24 35);
   /* Scale and set the background settings. */
@@ -171,8 +181,8 @@ body {
   width: 10em;
   height: 15em;
   /* Add a default background color and border. */
-  background-color: rgb(0, 0, 0);
-  background-image: url(https://i.imgur.com/TkbFSAw.jpg?2);
+  background-color: rgba(0, 0, 0, 0);
+  /* background-image: url(https://i.imgur.com/TkbFSAw.jpg?2); */
   border-radius: 0.8em;
   border: 1px solid rgba(153 24 35);
   /* Scale and set the background settings. */
@@ -185,6 +195,12 @@ body {
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
+}
+.p2-card:hover {
+  margin: 0;
+  box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
+  /* box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%); */
+  transition: 0.15s;
 }
 .p2-score {
   grid-area: 2 / 1 / 4 / 2;
@@ -201,4 +217,35 @@ body {
   font-size: 50px;
   box-shadow: 0 20px 50px 0 rgb(0 0 0 / 80%), 0 6px 20px 0 rgb(0 0 0 / 20%);
   border-radius: 5px;
+}
+
+#reset-background {
+  grid-area: 6/5;
+  background-color: rgba(153 24 35);
+  color: white;
+  font-family: "MedievalSharp", cursive;
+  border-radius: 8px 8px 8px 8px;
+  height: 30px;
+  width: 75px;
+  border: black;
+  /* box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%); */
+  box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%);
+  cursor: pointer;
+}
+#reset {
+  background-color: rgba(153, 24, 35, 0);
+  color: white;
+  font-family: "MedievalSharp", cursive;
+  border-radius: 8px 8px 8px 8px;
+  height: 20px;
+  width: 65px;
+  margin: 5px;
+  border: black;
+  cursor: pointer;
+}
+#reset:hover {
+  background-color: rgba(79, 11, 17, 0);
+  box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
+  /* box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%); */
+  transition: 0.15s;
 }
