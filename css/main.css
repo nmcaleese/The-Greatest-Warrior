@@ -52,7 +52,6 @@ body {
 .card:hover {
   margin: 0;
   box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
-  /* box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%); */
   transition: 0.15s;
 }
 
@@ -120,36 +119,25 @@ body {
   height: 40px;
   width: 125px;
   border: black;
-  /* box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%); */
   box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%);
   cursor: pointer;
 }
 #send-warrior:hover {
   background-color: rgba(79, 11, 17, 0);
   box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
-  /* box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%); */
   transition: 0.15s;
 }
 .p1-card {
   grid-area: 4 / 4 / 5 / 5;
   box-sizing: border-box;
-  /* switch this to display: grid (to change the position of the card title) */
   display: inline-block;
   margin: 5px 5px 5px 5px;
-  /* Set the card's dimensions, and size it relative to
-     it's font size. */
   font-size: inherit;
-  /* Add a default background color and border. */
   background-color: rgba(0, 0, 0, 0);
-  /* background-image: url(https://i.imgur.com/TkbFSAw.jpg?1); */
   border-radius: 0.8em;
-  border: 1px solid rgba(153 24 35);
-  /* Scale and set the background settings. */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  /* "Hide" any text within the element (use text to be
-     simply compliant with screen readers, etc.). */
   color: white;
   text-align: center;
   white-space: nowrap;
@@ -159,7 +147,6 @@ body {
 .p1-card:hover {
   margin: 0;
   box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
-  /* box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%); */
   transition: 0.15s;
 }
 .p2-camp {
@@ -175,22 +162,14 @@ body {
 .p2-card {
   grid-area: 4 / 6 / 5 / 7;
   margin: 5px 5px 5px 5px;
-  /* Set the card's dimensions, and size it relative to
-     it's font size. */
   font-size: inherit;
   width: 10em;
   height: 15em;
-  /* Add a default background color and border. */
   background-color: rgba(0, 0, 0, 0);
-  /* background-image: url(https://i.imgur.com/TkbFSAw.jpg?2); */
   border-radius: 0.8em;
-  border: 1px solid rgba(153 24 35);
-  /* Scale and set the background settings. */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  /* "Hide" any text within the element (use text to be
-     simply compliant with screen readers, etc.). */
   color: white;
   text-align: center;
   white-space: nowrap;
@@ -199,7 +178,6 @@ body {
 .p2-card:hover {
   margin: 0;
   box-shadow: 0 0px 20px 0 rgb(0 0 0 / 80%), 0 20px 40px 0 rgb(0 0 0 / 20%);
-  /* box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%); */
   transition: 0.15s;
 }
 #player-2-score {
@@ -219,7 +197,7 @@ body {
   grid-area: 2/ 3 / 3 / 8;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.2);
-  color: black;
+  color: white;
   font-size: 50px;
   box-shadow: 0 20px 50px 0 rgb(0 0 0 / 80%), 0 6px 20px 0 rgb(0 0 0 / 20%);
   border-radius: 5px;

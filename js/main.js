@@ -144,6 +144,7 @@ function initGame() {
   p2CardEl.style.backgroundImage = "";
   p2CardEl.innerText = "";
   p2ScoreEl.innerText = player2.p2CurrentScore.length;
+  bannerEl.innerText = '';
   render();
 }
 
@@ -154,9 +155,8 @@ function randomCard() {
   p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
 }
 
-// notes: parsing out the funcitons into smaller chunks to get the terrain
 function flipCard() {
-  // determine winner before going another round
+  if(cardsOnField.length === 0){
   randomCard();
   cardsOnField.push(p1CurrentCard[0]);
   cardsOnField.push(p2CurrentCard[0]);
@@ -165,6 +165,7 @@ function flipCard() {
   p2CardEl.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?2')";
   p2CardEl.innerText = "";
   render();
+  }
 }
 
 function playHand() {
@@ -186,7 +187,7 @@ function playHand() {
 function render() {
   p1ScoreEl.innerText = player1.p1CurrentScore.length;
   p2ScoreEl.innerText = player2.p2CurrentScore.length;
-  bannerEl.innerText = "";
+  // bannerEl.innerText = "";
 }
 
 function determineWinner() {
@@ -218,6 +219,7 @@ function player1Victory() {
   setTimeout(function () {
     p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p2CardEl.innerText = "";
+    render()
   }, 1500);
   player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
@@ -227,6 +229,7 @@ function player2Victory() {
   setTimeout(function () {
     p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p1CardEl.innerText = "";
+    render()
   }, 1500);
   player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
@@ -235,7 +238,10 @@ function tie() {
   bannerEl.innerText = `Your warriors killed each other`;
   setTimeout(function () {
     p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
+    p1CardEl.innerText = "";
     p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
+    p2CardEl.innerText = "";
+    render()
   }, 1500);
 }
 
