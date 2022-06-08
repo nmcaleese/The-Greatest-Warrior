@@ -73,7 +73,9 @@ let player1,
 
 /*----- cached element references -----*/
 
-const p1PlayButton = document.getElementById("send-warrior");
+const p1PlayButtonEl = document.getElementById("send-warrior");
+
+const anyCardEl = document.getElementById("Player-1-hand")
 
 const p1ScoreEl = document.getElementById("p1-score");
 const p2ScoreEl = document.getElementById("player-2-score");
@@ -86,7 +88,9 @@ const bannerEl = document.getElementById("banner");
 const resetButtonEl = document.getElementById("reset")
 
 /*----- event listeners -----*/
-p1PlayButton.addEventListener("click", flipCard);
+p1PlayButtonEl.addEventListener("click", flipCard);
+
+anyCardEl.addEventListener("click", flipCard);
 
 p1CardEl.addEventListener("click", playHand);
 
