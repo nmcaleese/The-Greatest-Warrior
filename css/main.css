@@ -202,15 +202,21 @@ body {
   /* box-shadow: 0 0px 0px 0 rgb(0 0 0 / 80%), 0 0px 0px 0 rgb(0 0 0 / 20%); */
   transition: 0.15s;
 }
-.p2-score {
+#player-2-score {
   grid-area: 2 / 1 / 4 / 2;
   color: rgb(239, 238, 238);
-  background-color: rgba(153 24 35);
+  background-color: rgb(153, 24, 35);
   border-radius: 8px 8px 8px 8px;
-  font-size: 50px;
+  height: 95px;
+  width: 125px;
+  font-size: 15px;
+  padding: 5px; 
+}
+#p2-score {
+  font-size: 70px;
 }
 .banner {
-  grid-area: 2/ 4 / 3 / 7;
+  grid-area: 2/ 3 / 3 / 8;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.2);
   color: black;

@@ -75,13 +75,13 @@ let player1,
 
 const p1PlayButtonEl = document.getElementById("send-warrior");
 
-const playerHandEl = document.querySelectorAll('#player-1-hand > .card');
+const playerHandEl = document.querySelectorAll("#player-1-hand > .card");
 
-const anyCardEl = document.getElementById("player-1-hand")
+const anyCardEl = document.getElementById("player-1-hand");
 
 const p1ScoreEl = document.getElementById("p1-score");
 
-const p2ScoreEl = document.getElementById("player-2-score");
+const p2ScoreEl = document.getElementById("p2-score");
 
 const p1CardEl = document.getElementById("player-1-card");
 
@@ -89,7 +89,7 @@ const p2CardEl = document.getElementById("player-2-card");
 
 const bannerEl = document.getElementById("banner");
 
-const resetButtonEl = document.getElementById("reset")
+const resetButtonEl = document.getElementById("reset");
 
 /*----- event listeners -----*/
 p1PlayButtonEl.addEventListener("click", flipCard);
@@ -98,30 +98,53 @@ anyCardEl.addEventListener("click", flipCard);
 
 p1CardEl.addEventListener("click", playHand);
 
-resetButtonEl.addEventListener("click", initGame)
+resetButtonEl.addEventListener("click", initGame);
 
 /*----- functions -----*/
 
-
 function initGame() {
   player1 = {
-    p1CurrentScore: [/*CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8,*/ CARDS.card9, CARDS.card10, CARDS.card11,
+    p1CurrentScore: [
+      CARDS.card0,
+      CARDS.card1,
+      CARDS.card2,
+      CARDS.card3,
+      CARDS.card4,
+      CARDS.card5,
+      CARDS.card6,
+      CARDS.card7,
+      CARDS.card8,
+      CARDS.card9,
+      CARDS.card10,
+      CARDS.card11,
     ],
     p1CurrentCard: [],
   };
   player2 = {
-    p2CurrentScore: [ CARDS.card0, CARDS.card1, /*CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11,*/
+    p2CurrentScore: [
+      CARDS.card0,
+      CARDS.card1,
+      CARDS.card2,
+      CARDS.card3,
+      CARDS.card4,
+      CARDS.card5,
+      CARDS.card6,
+      CARDS.card7,
+      CARDS.card8,
+      CARDS.card9,
+      CARDS.card10,
+      CARDS.card11,
     ],
     p2CurrentCard: [],
   };
   cardsOnField = [];
-  p1CardEl.style.backgroundImage = ''
-  p1CardEl.innerText = '';
+  p1CardEl.style.backgroundImage = "";
+  p1CardEl.innerText = "";
   p1ScoreEl.innerText = player1.p1CurrentScore.length;
-  p2CardEl.style.backgroundImage = ''
-  p2CardEl.innerText = '';
+  p2CardEl.style.backgroundImage = "";
+  p2CardEl.innerText = "";
   p2ScoreEl.innerText = player2.p2CurrentScore.length;
-  render()
+  render();
 }
 
 function randomCard() {
@@ -130,7 +153,6 @@ function randomCard() {
   let y = Math.floor(Math.random() * player2.p2CurrentScore.length);
   p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
 }
-
 
 // notes: parsing out the funcitons into smaller chunks to get the terrain
 function flipCard() {
@@ -141,30 +163,30 @@ function flipCard() {
   p1CardEl.style.backgroundImage = cardsOnField[0].image;
   p1CardEl.innerText = p1CurrentCard[0].name;
   p2CardEl.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?2')";
-  p2CardEl.innerText = '';
-  render()
+  p2CardEl.innerText = "";
+  render();
 }
 
-function playHand() {  
-    revealCard();
+function playHand() {
+  revealCard();
   if (p1CurrentCard[0].score > p2CurrentCard[0].score) {
-    player1Victory()
+    player1Victory();
   } else if (p2CurrentCard[0].score > p1CurrentCard[0].score) {
-    player2Victory()
+    player2Victory();
   } else {
-    tie()
+    tie();
   }
-  determineWinner()
-  setTimeout(function() {
-    endRound()
-  }, 3000)
+  determineWinner();
+  setTimeout(function () {
+    endRound();
+  }, 3000);
   cardsOnField = [];
 }
 
 function render() {
   p1ScoreEl.innerText = player1.p1CurrentScore.length;
   p2ScoreEl.innerText = player2.p2CurrentScore.length;
-  bannerEl.innerText = '';
+  bannerEl.innerText = "";
 }
 
 function determineWinner() {
@@ -172,7 +194,11 @@ function determineWinner() {
     bannerEl.innerText = "All of your Warriors have been slaughtered";
   } else if (player2.p2CurrentScore.length === 0) {
     bannerEl.innerText = "You have slaughtered the enemies forces!";
-  } else {} 
+    setTimeout(function () {
+      initGame();
+    }, 3000);
+  } else {
+  }
 }
 
 function revealCard() {
@@ -181,41 +207,41 @@ function revealCard() {
 }
 
 function endRound() {
-  p1CardEl.style.backgroundImage = ''
-  p2CardEl.style.backgroundImage = ''
-  p1CardEl.innerText = '';
-  p2CardEl.innerText = '';
+  p1CardEl.style.backgroundImage = "";
+  p2CardEl.style.backgroundImage = "";
+  p1CardEl.innerText = "";
+  p2CardEl.innerText = "";
 }
 
 function player1Victory() {
   bannerEl.innerText = `Your warrior won`;
-  setTimeout(function() {
-    p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')"
-    p2CardEl.innerText = ''
+  setTimeout(function () {
+    p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
+    p2CardEl.innerText = "";
   }, 1500);
-  player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1])
+  player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
 
 function player2Victory() {
   bannerEl.innerText = `Your warrior was defeated`;
-  setTimeout(function() {
-    p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')"
-    p1CardEl.innerText = ''
+  setTimeout(function () {
+    p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
+    p1CardEl.innerText = "";
   }, 1500);
   player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
 
-function tie(){
+function tie() {
   bannerEl.innerText = `Your warriors killed each other`;
-  setTimeout(function() {
-    p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')"
-    p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')"
+  setTimeout(function () {
+    p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
+    p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
   }, 1500);
 }
-// setTimeout(function() {(input function)}, 2000)
 
 initGame();
 
+// ICEBOX
 
 //write a function that will declare the winner and pause before running render again to reset the hand
 
@@ -224,16 +250,16 @@ initGame();
 // //  player1.p1CurrentScore.forEach(
 //   playerHandEl.forEach(function(card, idx){
 //     if(idx < player1.p1CurrentScore.length){
-//         card.style.background = 
+//         card.style.background =
 //         innerText = 'done'
 //     }
 //     })
 
 //   // the default state of the cards should be transparent, and the iterator brings them out
 
-  // update the background of each iterated card to the card default background
+// update the background of each iterated card to the card default background
 
-// 
+//
 // (from render function) change background to transparent, after defeat effect
 
 //turn off "camp" button once a warrior is on the field
@@ -241,6 +267,4 @@ initGame();
 // IN CASE OF TIE else { run getRandoms and playHand again}
 // Tie will only work if the "grabbing" of the cards out of the array is based on the number of cards, rather than just a specific item in the array
 
-
-
-//betting phase true or false, 
+//betting phase true or false,
