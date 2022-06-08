@@ -25,7 +25,7 @@ let player1,
 
 /*----- cached element references -----*/
 
-const p1CampEl = document.getElementById("player-1-camp");
+const p1PlayButton = document.getElementById("send-warrior");
 
 const p1ScoreEl = document.getElementById("player-1-score");
 const p2ScoreEl = document.getElementById("player-2-score");
@@ -36,9 +36,9 @@ const p2CardEl = document.getElementById("player-2-card");
 const bannerEl = document.getElementById("banner");
 
 /*----- event listeners -----*/
-p1CampEl.addEventListener("click", playHand);
+p1PlayButton.addEventListener("click", flipCard);
 
-bannerEl.addEventListener("click", determineWinner);
+p1CardEl.addEventListener("click", playHand);
 
 /*----- functions -----*/
 
@@ -90,7 +90,7 @@ function randomCard() {
     p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
 }
 
-function playHand() {
+function flipCard() {
   randomCard()
   if (player1.p1CurrentScore.length === 0) {
     bannerEl.innerText = "All of your Warriors have been slaughtered";
@@ -99,15 +99,18 @@ function playHand() {
   } else {
     cardsOnField.push(p1CurrentCard[0]);
     cardsOnField.push(p2CurrentCard[0]);
+    p1CardEl.style.backgroundImage = cardsOnField[0].image
     p1CardEl.innerText = p1CurrentCard[0].name;
-    p2CardEl.innerText = p2CurrentCard[0].name;
     
-    bannerEl.innerText = `Fight!`;
-    changeCards()
+    // p2CardEl.innerText = p2CurrentCard[0].name;
+    
+    // bannerEl.innerText = `Fight!`;
+    
+    // changeCards()
   }
 }
 
-function determineWinner() {
+function playHand() {
   if (p1CurrentCard[0].score > p2CurrentCard[0].score) {
     bannerEl.innerText = `Your warrior won`;
     player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1]);
@@ -115,6 +118,7 @@ function determineWinner() {
     bannerEl.innerText = `Your warrior was defeated`;
     player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1]);
   } else {
+    // current in case of tie
     bannerEl.innerText = `Your warriors killed each other`;
   }
   cardsOnField = [];
@@ -129,7 +133,7 @@ function render() {
 }
 
 function changeCards() {
-  p1CardEl.style.backgroundImage = cardsOnField[0].image
+  // p1CardEl.style.backgroundImage = cardsOnField[0].image
   p2CardEl.style.backgroundImage = cardsOnField[1].image
 }
 
@@ -138,7 +142,7 @@ initGame();
 
 //turn off "camp" button once a warrior is on the field
 
-// IN CASE OF TIE else { run getRandoms and determineWinner again}
+// IN CASE OF TIE else { run getRandoms and playHand again}
 // Tie will only work if the "grabbing" of the cards out of the array is based on the number of cards, rather than just a specific item in the array
 
 // Establish camp element with tent animation that reflects the player's score
