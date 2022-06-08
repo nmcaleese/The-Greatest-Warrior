@@ -101,7 +101,7 @@ body {
 #player-1-score {
   grid-area: 2 / 2 / 4 / 3;
   color: rgb(239, 238, 238);
-  background-color: rgba(153 24 35);
+  background-color: rgb(153, 24, 35);
   border-radius: 8px 8px 8px 8px;
   height: 125px;
   width: 125px;

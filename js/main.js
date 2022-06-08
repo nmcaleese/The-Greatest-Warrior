@@ -105,12 +105,12 @@ resetButtonEl.addEventListener("click", initGame)
 
 function initGame() {
   player1 = {
-    p1CurrentScore: [CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11,
+    p1CurrentScore: [/*CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8,*/ CARDS.card9, CARDS.card10, CARDS.card11,
     ],
     p1CurrentCard: [],
   };
   player2 = {
-    p2CurrentScore: [ CARDS.card0, CARDS.card1, CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11,
+    p2CurrentScore: [ CARDS.card0, CARDS.card1, /*CARDS.card2, CARDS.card3, CARDS.card4, CARDS.card5, CARDS.card6, CARDS.card7, CARDS.card8, CARDS.card9, CARDS.card10, CARDS.card11,*/
     ],
     p2CurrentCard: [],
   };
@@ -131,53 +131,48 @@ function randomCard() {
   p2CurrentCard = player2.p2CurrentScore.splice(y, 1);
 }
 
-function flipCard() {
-  randomCard();
-  if (player1.p1CurrentScore.length === 0) {
-    bannerEl.innerText = "All of your Warriors have been slaughtered";
-  } else if (player2.p2CurrentScore.length === 0) {
-    bannerEl.innerText = "You have slaughtered the enemies forces!";
-  } else {
-    cardsOnField.push(p1CurrentCard[0]);
-    cardsOnField.push(p2CurrentCard[0]);
-    p1CardEl.style.backgroundImage = cardsOnField[0].image;
-    p1CardEl.innerText = p1CurrentCard[0].name;
-    p2CardEl.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?2')";
-    p2CardEl.innerText = '';
-    bannerEl.innerText = `Fight!`;
-  }
-}
+
 // notes: parsing out the funcitons into smaller chunks to get the terrain
 function flipCard() {
-
+  // determine winner before going another round
+  randomCard();
+  cardsOnField.push(p1CurrentCard[0]);
+  cardsOnField.push(p2CurrentCard[0]);
+  p1CardEl.style.backgroundImage = cardsOnField[0].image;
+  p1CardEl.innerText = p1CurrentCard[0].name;
+  p2CardEl.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?2')";
+  p2CardEl.innerText = '';
+  render()
 }
 
-function playHand() {
-  revealCard();
+function playHand() {  
+    revealCard();
   if (p1CurrentCard[0].score > p2CurrentCard[0].score) {
-    bannerEl.innerText = `Your warrior won`;
-    player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1]);
+    player1Victory()
   } else if (p2CurrentCard[0].score > p1CurrentCard[0].score) {
-    bannerEl.innerText = `Your warrior was defeated`;
-    player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1]);
+    player2Victory()
   } else {
-    // current in case of tie
-    bannerEl.innerText = `Your warriors killed each other`;
+    tie()
   }
+  determineWinner()
+  setTimeout(function() {
+    endRound()
+  }, 3000)
   cardsOnField = [];
-  render();
 }
 
 function render() {
   p1ScoreEl.innerText = player1.p1CurrentScore.length;
   p2ScoreEl.innerText = player2.p2CurrentScore.length;
+  bannerEl.innerText = '';
+}
 
-  bannerEl.innerText = `prepare to fight`;
-  
-  // change background to transparent, after defeat effect
-
-  // p1CardEl.style.backgroundImage = ''
-  // p2CardEl.style.backgroundImage = ''
+function determineWinner() {
+  if (player1.p1CurrentScore.length === 0) {
+    bannerEl.innerText = "All of your Warriors have been slaughtered";
+  } else if (player2.p2CurrentScore.length === 0) {
+    bannerEl.innerText = "You have slaughtered the enemies forces!";
+  } else {} 
 }
 
 function revealCard() {
@@ -185,31 +180,61 @@ function revealCard() {
   p2CardEl.style.backgroundImage = cardsOnField[1].image;
 }
 
-
-
-function amountOfCards () {
-  //based on player1.p1CurrentScore.length (this will give you the number of cards that should be iterated in the players hand)
-//  player1.p1CurrentScore.forEach(
-  playerHandEl.forEach(function(card, idx){
-    if(idx < player1.p1CurrentScore.length){
-        card.style.background = 
-        innerText = 'done'
-    }
-    })
-
-  // the default state of the cards should be transparent, and the iterator brings them out
-
-  // update the background of each iterated card to the card default background
-
+function endRound() {
+  p1CardEl.style.backgroundImage = ''
+  p2CardEl.style.backgroundImage = ''
+  p1CardEl.innerText = '';
+  p2CardEl.innerText = '';
 }
 
+function player1Victory() {
+  bannerEl.innerText = `Your warrior won`;
+  setTimeout(function() {
+    p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')"
+    p2CardEl.innerText = ''
+  }, 1500);
+  player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1])
+}
+
+function player2Victory() {
+  bannerEl.innerText = `Your warrior was defeated`;
+  setTimeout(function() {
+    p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')"
+    p1CardEl.innerText = ''
+  }, 1500);
+  player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1]);
+}
+
+function tie(){
+  bannerEl.innerText = `Your warriors killed each other`;
+  setTimeout(function() {
+    p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')"
+    p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')"
+  }, 1500);
+}
+// setTimeout(function() {(input function)}, 2000)
 
 initGame();
 
 
+//write a function that will declare the winner and pause before running render again to reset the hand
 
+// function amountOfCards () {
+//   //based on player1.p1CurrentScore.length (this will give you the number of cards that should be iterated in the players hand)
+// //  player1.p1CurrentScore.forEach(
+//   playerHandEl.forEach(function(card, idx){
+//     if(idx < player1.p1CurrentScore.length){
+//         card.style.background = 
+//         innerText = 'done'
+//     }
+//     })
 
+//   // the default state of the cards should be transparent, and the iterator brings them out
 
+  // update the background of each iterated card to the card default background
+
+// 
+// (from render function) change background to transparent, after defeat effect
 
 //turn off "camp" button once a warrior is on the field
 
