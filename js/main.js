@@ -1,4 +1,5 @@
 /*----- constants -----*/
+
 const CARDS = {
   card0: {
     name: "Celt  Warrior",
@@ -62,7 +63,10 @@ const CARDS = {
   },
 };
 
+
+
 /*----- app's state (variables) -----*/
+
 let player1,
   player2,
   p1CurrentCard,
@@ -71,7 +75,10 @@ let player1,
   p2CurrentScore,
   cardsOnField;
 
+
+
 /*----- cached element references -----*/
+
 
 const p1PlayButtonEl = document.getElementById("send-warrior");
 
@@ -93,7 +100,10 @@ const bannerEl = document.getElementById("banner");
 
 const resetButtonEl = document.getElementById("reset");
 
+
+
 /*----- event listeners -----*/
+
 p1PlayButtonEl.addEventListener("click", flipCard);
 
 anyCardEl.addEventListener("click", flipCard);
@@ -101,6 +111,8 @@ anyCardEl.addEventListener("click", flipCard);
 p1CardEl.addEventListener("click", playHand);
 
 resetButtonEl.addEventListener("click", initGame);
+
+
 
 /*----- functions -----*/
 
@@ -195,9 +207,9 @@ function render() {
 
 function determineWinner() {
   if (player1.p1CurrentScore.length === 0) {
-    bannerEl.innerText = "All of your Warriors have been slaughtered";
+    bannerEl.innerText = "All Of Your Warriors Have Been Slaughtered";
   } else if (player2.p2CurrentScore.length === 0) {
-    bannerEl.innerText = "You have slaughtered the enemies forces!";
+    bannerEl.innerText = "You Have Slaughtered The Enemies Forces!";
     setTimeout(function () {
       initGame();
     }, 1500);
@@ -219,7 +231,7 @@ function endRound() {
 }
 
 function player1Victory() {
-  bannerEl.innerText = `Your warrior won`;
+  bannerEl.innerText = `Your Warrior Won`;
   setTimeout(function () {
     p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p2CardEl.innerText = "";
@@ -229,7 +241,7 @@ function player1Victory() {
 }
 
 function player2Victory() {
-  bannerEl.innerText = `Your warrior was defeated`;
+  bannerEl.innerText = `Your Warrior Was Defeated`;
   setTimeout(function () {
     p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p1CardEl.innerText = "";
@@ -239,7 +251,7 @@ function player2Victory() {
 }
 
 function tie() {
-  bannerEl.innerText = `Your warriors killed each other`;
+  bannerEl.innerText = `Your Warriors Killed Each Other`;
   setTimeout(function () {
     p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p1CardEl.innerText = "";
@@ -273,8 +285,3 @@ function p2UpdateHand() {
   });
 }
 initGame();
-
-// ICEBOX
-
-// IN CASE OF TIE else { run getRandoms and playHand again}
-// Tie will only work if the "grabbing" of the cards out of the array is based on the number of cards, rather than just a specific item in the array
