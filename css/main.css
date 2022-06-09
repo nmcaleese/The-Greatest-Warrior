@@ -91,12 +91,7 @@ body {
 #twelve {
   grid-area: 2/1;
 }
-#p1-captured {
-  grid-area: 5/1;
-}
-#p1-captured-six {
-  grid-area: 5/2;
-}
+
 #player-1-score {
   grid-area: 2 / 2 / 4 / 3;
   color: rgb(239, 238, 238);
@@ -159,6 +154,51 @@ body {
   box-shadow: 0 20px 50px 0 rgb(0 0 0 / 80%), 0 6px 20px 0 rgb(0 0 0 / 20%);
   border-radius: 5px;
 }
+#player-2-hand {
+  background: rgba(0, 0, 0, 0);
+  grid-area: 1 / 1 / 4 / 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(12, 2em) 150px;
+}
+
+#thirteen {
+  grid-area: 13/3;
+}
+#fourteen {
+  grid-area: 12/3;
+}
+#fifteen {
+  grid-area: 11/3;
+}
+#sixteen {
+  grid-area: 10/3;
+}
+#seventeen {
+  grid-area: 9/3;
+}
+#eighteen {
+  grid-area: 8/3;
+}
+#nineteen {
+  grid-area: 7/3;
+}
+#twenty {
+  grid-area: 6/3;
+}
+#twenty-one {
+  grid-area: 5/3;
+}
+#twenty-two {
+  grid-area: 4/3;
+}
+#twenty-three {
+  grid-area: 3/3;
+}
+#twenty-four {
+  grid-area: 2/3;
+}
+
 .p2-card {
   grid-area: 4 / 6 / 5 / 7;
   margin: 5px 5px 5px 5px;

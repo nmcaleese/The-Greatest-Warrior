@@ -180,7 +180,7 @@ function playHand() {
   determineWinner();
   setTimeout(function () {
     endRound();
-  }, 3000);
+  }, 2500);
   cardsOnField = [];
 }
 
@@ -197,7 +197,7 @@ function determineWinner() {
     bannerEl.innerText = "You have slaughtered the enemies forces!";
     setTimeout(function () {
       initGame();
-    }, 3000);
+    }, 2500);
   } else {
   }
 }
@@ -221,7 +221,7 @@ function player1Victory() {
     p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p2CardEl.innerText = "";
     render()
-  }, 1500);
+  }, 1000);
   player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
 
@@ -231,7 +231,7 @@ function player2Victory() {
     p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p1CardEl.innerText = "";
     render()
-  }, 1500);
+  }, 1000);
   player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
 
@@ -243,7 +243,7 @@ function tie() {
     p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p2CardEl.innerText = "";
     render()
-  }, 1500);
+  }, 1000);
 }
 
 initGame();
