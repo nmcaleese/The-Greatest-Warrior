@@ -146,7 +146,7 @@ function initGame() {
   p2CardEl.style.backgroundImage = "";
   p2CardEl.innerText = "";
   p2ScoreEl.innerText = player2.p2CurrentScore.length;
-  bannerEl.innerText = '';
+  bannerEl.innerText = "";
   render();
 }
 
@@ -158,15 +158,15 @@ function randomCard() {
 }
 
 function flipCard() {
-  if(cardsOnField.length === 0){
-  randomCard();
-  cardsOnField.push(p1CurrentCard[0]);
-  cardsOnField.push(p2CurrentCard[0]);
-  p1CardEl.style.backgroundImage = cardsOnField[0].image;
-  p1CardEl.innerText = p1CurrentCard[0].name;
-  p2CardEl.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?2')";
-  p2CardEl.innerText = "";
-  render();
+  if (cardsOnField.length === 0) {
+    randomCard();
+    cardsOnField.push(p1CurrentCard[0]);
+    cardsOnField.push(p2CurrentCard[0]);
+    p1CardEl.style.backgroundImage = cardsOnField[0].image;
+    p1CardEl.innerText = p1CurrentCard[0].name;
+    p2CardEl.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?2')";
+    p2CardEl.innerText = "";
+    render();
   }
 }
 
@@ -201,7 +201,8 @@ function determineWinner() {
     setTimeout(function () {
       initGame();
     }, 1500);
-  } else { }
+  } else {
+  }
 }
 
 function revealCard() {
@@ -222,7 +223,7 @@ function player1Victory() {
   setTimeout(function () {
     p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p2CardEl.innerText = "";
-    render()
+    render();
   }, 500);
   player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
@@ -232,7 +233,7 @@ function player2Victory() {
   setTimeout(function () {
     p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p1CardEl.innerText = "";
-    render()
+    render();
   }, 500);
   player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
@@ -244,38 +245,36 @@ function tie() {
     p1CardEl.innerText = "";
     p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p2CardEl.innerText = "";
-    render()
+    render();
   }, 500);
 }
 
 function p1UpdateHand() {
-  player1HandEl.forEach(function(card, idx){
-    if(idx +1 <= player1.p1CurrentScore.length){
-        card.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?1')"
-        card.style.border = '1px solid rgb(153 24 35)'
+  player1HandEl.forEach(function (card, idx) {
+    if (idx + 1 <= player1.p1CurrentScore.length) {
+      card.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?1')";
+      card.style.border = "1px solid rgb(153 24 35)";
     } else {
-      card.style.backgroundImage = 'none'
-    card.style.border = 'none'
+      card.style.backgroundImage = "none";
+      card.style.border = "none";
     }
-  })
+  });
 }
 
 function p2UpdateHand() {
-  player2HandEl.forEach(function(card, idx){
-    if(idx +1 <= player2.p2CurrentScore.length){
-        card.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?1')"
-        card.style.border = '1px solid rgb(153 24 35)'
+  player2HandEl.forEach(function (card, idx) {
+    if (idx + 1 <= player2.p2CurrentScore.length) {
+      card.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?1')";
+      card.style.border = "1px solid rgb(153 24 35)";
     } else {
-      card.style.backgroundImage = 'none'
-    card.style.border = 'none'
+      card.style.backgroundImage = "none";
+      card.style.border = "none";
     }
-  })
+  });
 }
 initGame();
 
-
 // ICEBOX
-
 
 // IN CASE OF TIE else { run getRandoms and playHand again}
 // Tie will only work if the "grabbing" of the cards out of the array is based on the number of cards, rather than just a specific item in the array
