@@ -36,15 +36,15 @@ body {
   grid-template-rows: repeat(12, 2em) 150px;
 }
 .card {
-  background-color: rgb(0 0 0 / 80%);
+  background-color: rgba(0, 0, 0, 0.024);
   display: inline-block;
   grid-area: 6/1;
   height: 120px;
   width: 80px;
   margin: 3px;
   border-radius: 0.7em;
-  background-image: url(https://i.imgur.com/TkbFSAw.jpg?1);
-  border: 1px solid rgb(153 24 35);
+  /* background-image: url(https://i.imgur.com/TkbFSAw.jpg?1);
+  border: 1px solid rgb(153 24 35); */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -57,9 +57,15 @@ body {
 
 #one {
   grid-area: 13/1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover; 
 }
 #two {
   grid-area: 12/1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 #three {
   grid-area: 11/1;
@@ -90,6 +96,9 @@ body {
 }
 #twelve {
   grid-area: 2/1;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 #player-1-score {

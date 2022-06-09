@@ -75,7 +75,7 @@ let player1,
 
 const p1PlayButtonEl = document.getElementById("send-warrior");
 
-const playerHandEl = document.querySelectorAll("#player-1-hand > .card");
+const player1HandEl = document.querySelectorAll("#player-1-hand > .card");
 
 const anyCardEl = document.getElementById("player-1-hand");
 
@@ -180,14 +180,14 @@ function playHand() {
   determineWinner();
   setTimeout(function () {
     endRound();
-  }, 2500);
+  }, 1500);
   cardsOnField = [];
 }
 
 function render() {
   p1ScoreEl.innerText = player1.p1CurrentScore.length;
   p2ScoreEl.innerText = player2.p2CurrentScore.length;
-  // bannerEl.innerText = "";
+  p1UpdateHand();
 }
 
 function determineWinner() {
@@ -197,9 +197,8 @@ function determineWinner() {
     bannerEl.innerText = "You have slaughtered the enemies forces!";
     setTimeout(function () {
       initGame();
-    }, 2500);
-  } else {
-  }
+    }, 1500);
+  } else { }
 }
 
 function revealCard() {
@@ -221,7 +220,7 @@ function player1Victory() {
     p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p2CardEl.innerText = "";
     render()
-  }, 1000);
+  }, 500);
   player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
 
@@ -231,7 +230,7 @@ function player2Victory() {
     p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p1CardEl.innerText = "";
     render()
-  }, 1000);
+  }, 500);
   player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
 
@@ -243,35 +242,28 @@ function tie() {
     p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
     p2CardEl.innerText = "";
     render()
-  }, 1000);
+  }, 500);
+}
+
+function p1UpdateHand() {
+  player1HandEl.forEach(function(card, idx){
+    if(idx +1 <= player1.p1CurrentScore.length){
+        card.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?1')"
+        card.style.border = '1px solid rgb(153 24 35)'
+        card.innerText = `${idx + 1}`;
+    } else {
+      card.style.backgroundImage = 'none'
+    card.style.border = 'none'
+    card.innerText = `${idx + 1}`;
+    }
+  })
 }
 
 initGame();
 
+
 // ICEBOX
 
-//write a function that will declare the winner and pause before running render again to reset the hand
-
-// function amountOfCards () {
-//   //based on player1.p1CurrentScore.length (this will give you the number of cards that should be iterated in the players hand)
-// //  player1.p1CurrentScore.forEach(
-//   playerHandEl.forEach(function(card, idx){
-//     if(idx < player1.p1CurrentScore.length){
-//         card.style.background =
-//         innerText = 'done'
-//     }
-//     })
-
-//   // the default state of the cards should be transparent, and the iterator brings them out
-
-// update the background of each iterated card to the card default background
-
-//
-// (from render function) change background to transparent, after defeat effect
-
-//turn off "camp" button once a warrior is on the field
 
 // IN CASE OF TIE else { run getRandoms and playHand again}
 // Tie will only work if the "grabbing" of the cards out of the array is based on the number of cards, rather than just a specific item in the array
-
-//betting phase true or false,
