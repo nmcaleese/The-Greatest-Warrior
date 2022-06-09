@@ -43,8 +43,6 @@ body {
   width: 80px;
   margin: 3px;
   border-radius: 0.7em;
-  /* background-image: url(https://i.imgur.com/TkbFSAw.jpg?1);
-  border: 1px solid rgb(153 24 35); */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -56,16 +54,10 @@ body {
 }
 
 #p1-one {
-  grid-area: 25/1;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover; 
+  grid-area: 25/1; 
 }
 #p1-two {
   grid-area: 23/1;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
 }
 #p1-three {
   grid-area: 21/1;
@@ -96,9 +88,6 @@ body {
 }
 #p1-twelve {
   grid-area: 3/1;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
 }
 #p1-thirteen {
   grid-area: 13/2;
@@ -204,44 +193,79 @@ body {
   grid-area: 1 / 1 / 4 / 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(12, 2em) 150px;
+  grid-template-rows: repeat(24, 1em) 150px;
 }
-
-#p2-thirteen {
+#p2-one {
+  grid-area: 25/3; 
+}
+#p2-two {
+  grid-area: 23/3;
+}
+#p2-three {
+  grid-area: 21/3;
+}
+#p2-four {
+  grid-area: 19/3;
+}
+#p2-five {
+  grid-area: 17/3;
+}
+#p2-six {
+  grid-area: 15/3;
+}
+#p2-seven {
   grid-area: 13/3;
 }
-#p2-fourteen {
-  grid-area: 12/3;
-}
-#p2-fifteen {
+#p2-eight {
   grid-area: 11/3;
 }
-#p2-sixteen {
-  grid-area: 10/3;
-}
-#p2-seventeen {
+#p2-nine {
   grid-area: 9/3;
 }
-#p2-eighteen {
-  grid-area: 8/3;
-}
-#p2-nineteen {
+#p2-ten {
   grid-area: 7/3;
 }
-#p2-twenty {
-  grid-area: 6/3;
-}
-#p2-twenty-one {
+#p2-eleven {
   grid-area: 5/3;
 }
-#p2-twenty-two {
-  grid-area: 4/3;
-}
-#p2-twenty-three {
+#p2-twelve {
   grid-area: 3/3;
 }
+#p2-thirteen {
+  grid-area: 13/1;
+}
+#p2-fourteen {
+  grid-area: 12/1;
+}
+#p2-fifteen {
+  grid-area: 11/1;
+}
+#p2-sixteen {
+  grid-area: 10/1;
+}
+#p2-seventeen {
+  grid-area: 9/1;
+}
+#p2-eighteen {
+  grid-area: 8/1;
+}
+#p2-nineteen {
+  grid-area: 7/1;
+}
+#p2-twenty {
+  grid-area: 6/1;
+}
+#p2-twenty-one {
+  grid-area: 5/1;
+}
+#p2-twenty-two {
+  grid-area: 4/1;
+}
+#p2-twenty-three {
+  grid-area: 3/1;
+}
 #p2-twenty-four {
-  grid-area: 2/3;
+  grid-area: 2/1;
 }
 
 .p2-card {

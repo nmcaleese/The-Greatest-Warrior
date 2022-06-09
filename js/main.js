@@ -77,6 +77,8 @@ const p1PlayButtonEl = document.getElementById("send-warrior");
 
 const player1HandEl = document.querySelectorAll("#player-1-hand > .card");
 
+const player2HandEl = document.querySelectorAll("#player-2-hand > .card");
+
 const anyCardEl = document.getElementById("player-1-hand");
 
 const p1ScoreEl = document.getElementById("p1-score");
@@ -127,13 +129,13 @@ function initGame() {
       CARDS.card2,
       CARDS.card3,
       CARDS.card4,
-      // CARDS.card5,
-      // CARDS.card6,
-      // CARDS.card7,
-      // CARDS.card8,
-      // CARDS.card9,
-      // CARDS.card10,
-      // CARDS.card11,
+      CARDS.card5,
+      CARDS.card6,
+      CARDS.card7,
+      CARDS.card8,
+      CARDS.card9,
+      CARDS.card10,
+      CARDS.card11,
     ],
     p2CurrentCard: [],
   };
@@ -188,6 +190,7 @@ function render() {
   p1ScoreEl.innerText = player1.p1CurrentScore.length;
   p2ScoreEl.innerText = player2.p2CurrentScore.length;
   p1UpdateHand();
+  p2UpdateHand();
 }
 
 function determineWinner() {
@@ -250,15 +253,24 @@ function p1UpdateHand() {
     if(idx +1 <= player1.p1CurrentScore.length){
         card.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?1')"
         card.style.border = '1px solid rgb(153 24 35)'
-        card.innerText = `${idx + 1}`;
     } else {
       card.style.backgroundImage = 'none'
     card.style.border = 'none'
-    card.innerText = `${idx + 1}`;
     }
   })
 }
 
+function p2UpdateHand() {
+  player2HandEl.forEach(function(card, idx){
+    if(idx +1 <= player2.p2CurrentScore.length){
+        card.style.backgroundImage = "url('https://i.imgur.com/TkbFSAw.jpg?1')"
+        card.style.border = '1px solid rgb(153 24 35)'
+    } else {
+      card.style.backgroundImage = 'none'
+    card.style.border = 'none'
+    }
+  })
+}
 initGame();
 
 
