@@ -212,6 +212,7 @@ function endRound() {
   p2CardEl.style.backgroundImage = "";
   p1CardEl.innerText = "";
   p2CardEl.innerText = "";
+  bannerEl.innerText = "";
 }
 
 function player1Victory() {
