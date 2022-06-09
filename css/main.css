@@ -33,7 +33,7 @@ body {
   grid-area: 1 / 1 / 4 / 3;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(12, 2em) 150px;
+  grid-template-rows: repeat(24, 1em) 150px;
 }
 .card {
   background-color: rgba(0, 0, 0, 0.024);
@@ -55,50 +55,86 @@ body {
   transition: 0.15s;
 }
 
-#one {
-  grid-area: 13/1;
+#p1-one {
+  grid-area: 25/1;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover; 
 }
-#two {
-  grid-area: 12/1;
+#p1-two {
+  grid-area: 23/1;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
-#three {
+#p1-three {
+  grid-area: 21/1;
+}
+#p1-four {
+  grid-area: 19/1;
+}
+#p1-five {
+  grid-area: 17/1;
+}
+#p1-six {
+  grid-area: 15/1;
+}
+#p1-seven {
+  grid-area: 13/1;
+}
+#p1-eight {
   grid-area: 11/1;
 }
-#four {
-  grid-area: 10/1;
-}
-#five {
+#p1-nine {
   grid-area: 9/1;
 }
-#six {
-  grid-area: 8/1;
-}
-#seven {
+#p1-ten {
   grid-area: 7/1;
 }
-#eight {
-  grid-area: 6/1;
-}
-#nine {
+#p1-eleven {
   grid-area: 5/1;
 }
-#ten {
-  grid-area: 4/1;
-}
-#eleven {
+#p1-twelve {
   grid-area: 3/1;
-}
-#twelve {
-  grid-area: 2/1;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+}
+#p1-thirteen {
+  grid-area: 13/2;
+}
+#p1-fourteen {
+  grid-area: 12/2;
+}
+#p1-fifteen {
+  grid-area: 11/2;
+}
+#p1-sixteen {
+  grid-area: 10/2;
+}
+#p1-seventeen {
+  grid-area: 9/2;
+}
+#p1-eighteen {
+  grid-area: 8/2;
+}
+#p1-nineteen {
+  grid-area: 7/2;
+}
+#p1-twenty {
+  grid-area: 6/2;
+}
+#p1-twenty-one {
+  grid-area: 5/2;
+}
+#p1-twenty-two {
+  grid-area: 4/2;
+}
+#p1-twenty-three {
+  grid-area: 3/2;
+}
+#p1-twenty-four {
+  grid-area: 2/2;
 }
 
 #player-1-score {
@@ -171,40 +207,40 @@ body {
   grid-template-rows: repeat(12, 2em) 150px;
 }
 
-#thirteen {
+#p2-thirteen {
   grid-area: 13/3;
 }
-#fourteen {
+#p2-fourteen {
   grid-area: 12/3;
 }
-#fifteen {
+#p2-fifteen {
   grid-area: 11/3;
 }
-#sixteen {
+#p2-sixteen {
   grid-area: 10/3;
 }
-#seventeen {
+#p2-seventeen {
   grid-area: 9/3;
 }
-#eighteen {
+#p2-eighteen {
   grid-area: 8/3;
 }
-#nineteen {
+#p2-nineteen {
   grid-area: 7/3;
 }
-#twenty {
+#p2-twenty {
   grid-area: 6/3;
 }
-#twenty-one {
+#p2-twenty-one {
   grid-area: 5/3;
 }
-#twenty-two {
+#p2-twenty-two {
   grid-area: 4/3;
 }
-#twenty-three {
+#p2-twenty-three {
   grid-area: 3/3;
 }
-#twenty-four {
+#p2-twenty-four {
   grid-area: 2/3;
 }
 
