@@ -54,7 +54,7 @@ body {
 }
 
 #p1-one {
-  grid-area: 25/1; 
+  grid-area: 25/1;
 }
 #p1-two {
   grid-area: 23/1;
@@ -196,7 +196,7 @@ body {
   grid-template-rows: repeat(24, 1em) 150px;
 }
 #p2-one {
-  grid-area: 25/3; 
+  grid-area: 25/3;
 }
 #p2-two {
   grid-area: 23/3;
@@ -297,7 +297,7 @@ body {
   height: 95px;
   width: 125px;
   font-size: 15px;
-  padding: 5px; 
+  padding: 5px;
 }
 #p2-score {
   font-size: 70px;
