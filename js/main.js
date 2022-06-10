@@ -63,8 +63,6 @@ const CARDS = {
   },
 };
 
-
-
 /*----- app's state (variables) -----*/
 
 let player1,
@@ -75,10 +73,7 @@ let player1,
   p2CurrentScore,
   cardsOnField;
 
-
-
 /*----- cached element references -----*/
-
 
 const p1PlayButtonEl = document.getElementById("send-warrior");
 
@@ -100,8 +95,6 @@ const bannerEl = document.getElementById("banner");
 
 const resetButtonEl = document.getElementById("reset");
 
-
-
 /*----- event listeners -----*/
 
 p1PlayButtonEl.addEventListener("click", flipCard);
@@ -111,8 +104,6 @@ anyCardEl.addEventListener("click", flipCard);
 p1CardEl.addEventListener("click", playHand);
 
 resetButtonEl.addEventListener("click", initGame);
-
-
 
 /*----- functions -----*/
 
@@ -192,9 +183,7 @@ function playHand() {
     tie();
   }
   determineWinner();
-  setTimeout(function () {
-    endRound();
-  }, 1500);
+  endRound();
   cardsOnField = [];
 }
 
@@ -210,9 +199,7 @@ function determineWinner() {
     bannerEl.innerText = "All Of Your Warriors Have Been Slaughtered";
   } else if (player2.p2CurrentScore.length === 0) {
     bannerEl.innerText = "You Have Slaughtered The Enemies Forces!";
-    setTimeout(function () {
-      initGame();
-    }, 1500);
+    initGame();
   } else {
   }
 }
@@ -232,33 +219,27 @@ function endRound() {
 
 function player1Victory() {
   bannerEl.innerText = `Your Warrior Won`;
-  setTimeout(function () {
-    p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
-    p2CardEl.innerText = "";
-    render();
-  }, 500);
+  p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
+  p2CardEl.innerText = "";
+  render();
   player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
 
 function player2Victory() {
   bannerEl.innerText = `Your Warrior Was Defeated`;
-  setTimeout(function () {
-    p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
-    p1CardEl.innerText = "";
-    render();
-  }, 500);
+  p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
+  p1CardEl.innerText = "";
+  render();
   player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
 
 function tie() {
   bannerEl.innerText = `Your Warriors Killed Each Other`;
-  setTimeout(function () {
-    p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
-    p1CardEl.innerText = "";
-    p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
-    p2CardEl.innerText = "";
-    render();
-  }, 500);
+  p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
+  p1CardEl.innerText = "";
+  p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
+  p2CardEl.innerText = "";
+  render();
 }
 
 function p1UpdateHand() {
