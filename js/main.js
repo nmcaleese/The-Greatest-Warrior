@@ -119,15 +119,15 @@ resetButtonEl.addEventListener("click", initGame);
 function initGame() {
   player1 = {
     p1CurrentScore: [
-      CARDS.card0,
-      CARDS.card1,
-      CARDS.card2,
-      CARDS.card3,
-      CARDS.card4,
-      CARDS.card5,
-      CARDS.card6,
-      CARDS.card7,
-      CARDS.card8,
+      // CARDS.card0,
+      // CARDS.card1,
+      // CARDS.card2,
+      // CARDS.card3,
+      // CARDS.card4,
+      // CARDS.card5,
+      // CARDS.card6,
+      // CARDS.card7,
+      // CARDS.card8,
       CARDS.card9,
       CARDS.card10,
       CARDS.card11,
@@ -139,25 +139,23 @@ function initGame() {
       CARDS.card0,
       CARDS.card1,
       CARDS.card2,
-      CARDS.card3,
-      CARDS.card4,
-      CARDS.card5,
-      CARDS.card6,
-      CARDS.card7,
-      CARDS.card8,
-      CARDS.card9,
-      CARDS.card10,
-      CARDS.card11,
+      // CARDS.card3,
+      // CARDS.card4,
+      // CARDS.card5,
+      // CARDS.card6,
+      // CARDS.card7,
+      // CARDS.card8,
+      // CARDS.card9,
+      // CARDS.card10,
+      // CARDS.card11,
     ],
     p2CurrentCard: [],
   };
   cardsOnField = [];
   p1CardEl.style.backgroundImage = "";
   p1CardEl.innerText = "";
-  p1ScoreEl.innerText = player1.p1CurrentScore.length;
   p2CardEl.style.backgroundImage = "";
   p2CardEl.innerText = "";
-  p2ScoreEl.innerText = player2.p2CurrentScore.length;
   bannerEl.innerText = "";
   render();
 }
@@ -212,7 +210,7 @@ function determineWinner() {
     bannerEl.innerText = "You Have Slaughtered The Enemies Forces!";
     setTimeout(function () {
       initGame();
-    }, 1500);
+    }, 5000);
   } else {
   }
 }
