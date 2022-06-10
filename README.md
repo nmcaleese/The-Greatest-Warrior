@@ -15,8 +15,7 @@ JavaScript, HTML, CSS
 
 # Getting Started:
 
-In this section include the link to your deployed game and any instructions you deem important.
-
+https://nmcaleese.github.io/The-Greatest-Warrior/
 # Next Steps:
 
 ICE BOX:
