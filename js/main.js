@@ -203,7 +203,7 @@ function determineWinner() {
     bannerEl.innerText = "You Have Slaughtered The Enemies Forces!";
   setTimeout(function() {
     initGame();
-  }, 1500);
+  }, 4000);
   } else {
   }
 }
