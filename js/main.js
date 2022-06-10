@@ -183,7 +183,9 @@ function playHand() {
     tie();
   }
   determineWinner();
-  endRound();
+  setTimeout(function() {
+    endRound();
+  }, 1500);
   cardsOnField = [];
 }
 
@@ -199,7 +201,7 @@ function determineWinner() {
     bannerEl.innerText = "All Of Your Warriors Have Been Slaughtered";
   } else if (player2.p2CurrentScore.length === 0) {
     bannerEl.innerText = "You Have Slaughtered The Enemies Forces!";
-    setTimeout(function() {
+  setTimeout(function() {
     initGame();
   }, 1500);
   } else {
