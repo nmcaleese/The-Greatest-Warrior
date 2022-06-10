@@ -199,7 +199,9 @@ function determineWinner() {
     bannerEl.innerText = "All Of Your Warriors Have Been Slaughtered";
   } else if (player2.p2CurrentScore.length === 0) {
     bannerEl.innerText = "You Have Slaughtered The Enemies Forces!";
+    setTimeout(function() {
     initGame();
+  }, 1500);
   } else {
   }
 }
@@ -219,27 +221,33 @@ function endRound() {
 
 function player1Victory() {
   bannerEl.innerText = `Your Warrior Won`;
-  p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
-  p2CardEl.innerText = "";
-  render();
+  setTimeout(function() {
+    p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
+    p2CardEl.innerText = "";
+    render();
+  }, 500);
   player1.p1CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
 
 function player2Victory() {
   bannerEl.innerText = `Your Warrior Was Defeated`;
-  p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
-  p1CardEl.innerText = "";
-  render();
+  setTimeout(function() {
+    p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
+    p1CardEl.innerText = "";
+    render();
+  }, 500);
   player2.p2CurrentScore.push(cardsOnField[0], cardsOnField[1]);
 }
 
 function tie() {
   bannerEl.innerText = `Your Warriors Killed Each Other`;
+  setTimeout(function() {
   p1CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
   p1CardEl.innerText = "";
   p2CardEl.style.backgroundImage = "url('https://i.imgur.com/vhdEbpT.jpg')";
   p2CardEl.innerText = "";
   render();
+  }, 500);
 }
 
 function p1UpdateHand() {
