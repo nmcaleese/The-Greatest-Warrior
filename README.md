@@ -2,6 +2,7 @@
 
 The classic card game War... With a twist. Player's decks are not composed of standardized 2-A cards, but of the greatest warriors throughout history. Random warrior cards from a player's hand are pitted againt the computer's warrior card and the winner leaves with the captive added to their growing army(deck). Last army standing wins!!!
 
+![alt text](./images/pseudocode.png "pseudocode")
 # Screenshots
 
 ![alt text](./images/screenshot-1.png "screenshot 1")
@@ -15,8 +16,7 @@ JavaScript, HTML, CSS
 
 # Getting Started:
 
-In this section include the link to your deployed game and any instructions you deem important.
-
+https://nmcaleese.github.io/The-Greatest-Warrior/
 # Next Steps:
 
 ICE BOX:
