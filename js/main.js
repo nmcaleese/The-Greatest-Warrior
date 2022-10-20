@@ -206,12 +206,12 @@ function render() {
 function determineWinner() {
   if (player1.p1CurrentScore.length === 0) {
     bannerEl.innerText = "All Of Your Warriors Have Been Slaughtered";
-  } else {
+  } else if (player2.p2CurrentScore.length === 0) {
     bannerEl.innerText = "You Have Slaughtered The Enemies Forces!";
+  }
     setTimeout(function () {
       initGame();
     }, 5000);
-  }
 }
 
 function revealCard() {
